@@ -1,6 +1,6 @@
 const Keys = {
-  TAB: 9,
-  ENTER: 13,
+  TAB: 'Tab',
+  ENTER: 'Enter',
   ESCAPE: 27,
   UP: 38,
   DOWN: 40
