@@ -264,9 +264,16 @@ class Mention {
     if (data.disabled) {
       return;
     }
+
+    const textBeforeCursor = this.getTextBeforeCursor();
+    const { mentionChar, mentionCharIndex } = getMentionCharIndex(
+      textBeforeCursor,
+      this.options.mentionDenotationChars
+    );
+
     this.options.onSelect(data, (asyncData) => {
       this.insertItem(asyncData);
-    });
+    }, mentionChar);
     this.hideMentionList();
   }
 
