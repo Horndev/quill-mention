@@ -19,6 +19,12 @@ class MentionBlot extends Embed {
     denotationChar.innerHTML = data.denotationChar;
     node.appendChild(denotationChar);
     node.innerHTML += data.value;
+    if (data.denotationChar === "#") {
+      node.classList.add("tag-mention");
+    }
+    if (data.denotationChar === "@") {
+      node.classList.add("user-mention");
+    }
     return MentionBlot.setDataValues(node, data);
   }
 
